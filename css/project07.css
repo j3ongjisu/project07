@@ -770,16 +770,43 @@
     padding: 0 15px;
 }
 
+.main_event .event_slide .event_tit {
+    padding: 20px 30px;
+    text-align: left;
+    background: #f9f9f9;
+}
+
+.main_event .event_slide .event_tit h3 {
+    display: inline-block;
+    padding: 5px 20px;
+    color: #555;
+    border: 1px solid;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.main_event .event_slide .event_tit span {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 25px 0;
+}
+
+.main_event .event_slide .event_tit p {
+    font-weight: 300;
+
+}
 
 .main_event .arrows {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     display: flex;
     justify-content: space-between;
 
     transform: translate(-50%, -50%);
-    max-width: 1400px;
+    max-width: 1200px;
     width: 100%;
 
     padding: 0 15px;
