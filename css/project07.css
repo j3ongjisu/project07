@@ -59,7 +59,7 @@
 }
 
 .header.on {
-    background: var(--wc);
+    background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -98,7 +98,7 @@
 
 .gnb .main_menu a {
     display: block;
-    color: var(--dc);
+    color: #444;
     font-size: 15px;
     font-weight: 500;
     color: #444;
@@ -276,7 +276,7 @@
 
 .main_visual .menu {
     position: absolute;
-    bottom: 100px;
+    bottom: 200px;
     left: 50%;
     display: flex;
     gap: 5px;
@@ -342,12 +342,12 @@
 
 .main_visual .slide_num {
     position: absolute;
-    left: 55%;
+    left: 50%;
     bottom: 6%;
     z-index: 999;
     font-size: 20px;
     font-weight: 500;
-    transform: translate(-100%, 0);
+    transform: translate(-27%, 0);
     margin: 0 0 0 -16px;
     padding: 0 15px;
 
@@ -357,7 +357,7 @@
 .main_visual .arrows {
     display: flex;
     position: absolute;
-    left: 52%;
+    left: 50%;
     bottom: -3px;
 
     background: #ddd;
@@ -390,43 +390,186 @@
     transform: translate(calc(-100% - 20px), 0);
 }
 
-/*----------------section 3 - main_travel ----------------*/
-.main_portfolio {
-    padding: 100px;
-    position: relative;
+
+/* ----------section 2 - main_tab ----------*/
+
+.main_tab {
+    padding: 100px 0;
+}
+
+.main_tab .tab_tit {
+    margin: 0 auto 30px auto;
+}
+
+.main_tab .tab_tit h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+.main_tab .inner {
+    width: 1200px;
+    text-align: center;
+}
+
+.tab_link {
+    /* display: flex;*/
+    display: table;
+    width: 100%;
+    margin: 0 0 10px 0;
+
+}
+
+.tab_link>* {
+    /* flex: 1;*/
+    display: table-cell;
+    background: #999;
+    color: #fff;
+}
+
+.tab_link>*~* {
+    border-left: 1px solid #ddd;
+}
+
+.tab_link>*.on {
+    background: rgba(227, 6, 19, 0.9);
+}
+
+.tab_link a {
+    display: block;
+    padding: 10px 20px;
+}
+
+
+
+.tab_content {
+    padding: 30px 0;
     background: #f9f9f9;
 }
 
-.main_portfolio .title {
+.tab_content .con {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.tab_content .con.on {
+    visibility: visible;
+    height: auto;
+}
+
+.tab_content .con .tc_tit {
+    display: flex;
+    gap: 20px;
+    margin: 0 0 50px 00;
+    justify-content: center
+}
+
+.tab_content .con .tc_tit a {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 20px;
+    color: #777;
+    border: 1px solid #777;
+    border-radius: 15px;
+}
+
+.tab_content .con .tc_tit a:hover {
+    color: #fff;
+    background: #E30613;
+    border: 1px solid #E30613;
+}
+
+.tab_content .search_box {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+
+
+.tab_content .search input[type="text"] {
+    width: 150px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #888;
+    text-align: center;
+
+    font-size: 14px;
+    font-family: 'Noto Sans KR';
+
+    /* 검색어 너비 늘어나게 하는 효과 */
+    /* transition: width 0.5s; */
+}
+
+/* .tab_content .search input[type="text"]:focus {
+    width: 160px;
+} */
+
+.tab_content .search input[type="text"]::placeholder {
+    color: #777;
+}
+
+.tab_content .search input[type="text"]:focus::placeholder {
+    color: transparent;
+}
+
+.tab_content .search button {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.tab_content .search_btn a {
+    padding: 10px 20px;
+    border: 1px solid #333;
+}
+
+/*----------------section 3 - main_travel ----------------*/
+.main_travel {
+    padding: 100px 0;
+    position: relative;
+    background: #f9f9f9;
+
+}
+
+.main_travel .title {
     max-width: 1200px;
     margin: 0 auto 30px auto;
     padding: 0 15px;
     text-align: center;
 }
 
-.main_portfolio .title h2 {
+.main_travel .title h2 {
     font-size: 30px;
     font-weight: 700;
     margin: 0 0 10px 0;
 }
 
-.main_portfolio .title p {
+.main_travel .title p {
     font-size: 15px;
     font-weight: 300;
 }
 
-.main_portfolio .content {
+.main_travel .content {
     max-width: 100%;
     padding: 0 0;
 }
 
+.main_travel img {}
+
+
 /* 슬라이드 버튼 */
-.main_portfolio .slick-dots {
+.main_travel .slick-dots {
     margin: 40px 0;
     text-align: center;
 }
 
-.main_portfolio .slick-dots li {
+.main_travel .slick-dots li {
     display: inline-block;
     width: 20px;
     height: 4px;
@@ -435,42 +578,43 @@
     margin: 0 2px;
 }
 
-.main_portfolio .slick-dots li.slick-active {
+.main_travel .slick-dots li.slick-active {
     background: #E30613;
 }
 
-.main_portfolio .slick-dots li button {
+.main_travel .slick-dots li button {
     display: none;
 }
 
-.main_portfolio figure {
+.main_travel figure {
     max-width: 1200px;
     padding: 0 15px;
-    margin: 0 50px;
     transition: 1s;
 }
 
-.main_portfolio figure:not(.slick-current) {
+.main_travel figure:not(.slick-current) {
     filter: grayscale(1) brightness(1) blur(1px);
 }
 
-.main_portfolio .itm {
+.main_travel .itm {
     display: none;
     flex-direction: column;
     height: 100%;
 }
 
-.main_portfolio .itm h3 {
-    font-size: 18px;
+.main_travel .itm h3 {
+    font-size: 16px;
     font-weight: 500;
-    margin: 0 0 8px 0;
+    margin: 0 0 20px 0;
 }
 
-.main_portfolio .itm p {
-    line-height: 20px;
+.main_travel .itm p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
 }
 
-.main_portfolio .tab_arrows {
+.main_travel .tab_arrows {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -483,7 +627,7 @@
 
 
 
-.main_portfolio .tab_arrows .left {
+.main_travel .tab_arrows .left {
     position: absolute;
     left: 15px;
     width: 80px;
@@ -493,7 +637,7 @@
     font-size: 12px;
 }
 
-.main_portfolio .tab_arrows .left::before {
+.main_travel .tab_arrows .left::before {
     content: "";
     position: absolute;
     top: 60%;
@@ -503,7 +647,7 @@
     background: #333;
 }
 
-.main_portfolio .tab_arrows .left::after {
+.main_travel .tab_arrows .left::after {
     content: "";
     position: absolute;
     top: 60%;
@@ -516,7 +660,7 @@
     transform-origin: left bottom;
 }
 
-.main_portfolio .tab_arrows .right {
+.main_travel .tab_arrows .right {
     position: absolute;
     right: 15px;
     width: 80px;
@@ -526,7 +670,7 @@
     font-size: 12px;
 }
 
-.main_portfolio .tab_arrows .right::before {
+.main_travel .tab_arrows .right::before {
     content: "";
     position: absolute;
     top: 60%;
@@ -536,7 +680,7 @@
     background: #333;
 }
 
-.main_portfolio .tab_arrows .right::after {
+.main_travel .tab_arrows .right::after {
     content: "";
     position: absolute;
     top: 60%;
@@ -550,19 +694,19 @@
 }
 
 
-.main_portfolio .itm a {
+.main_travel .itm a {
     margin: auto 0 0 0;
     align-self: flex-start;
 }
 
-.main_portfolio .itm.on {
+.main_travel .itm.on {
     display: flex;
 }
 
 
 
 /* 사진 위 설명 */
-.main_portfolio .tab_txt {
+.main_travel .travle_txt {
     position: absolute;
     top: 175px;
     left: 50%;
@@ -573,34 +717,107 @@
     background: #fff;
     border: 1px solid #ddd;
 
-    width: 320px;
+    width: 336px;
     height: 420px;
     padding: 40px 30px;
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.main_portfolio .tab_txt::before {
+.main_travel .travle_txt::before {
     content: "";
     position: absolute;
     top: 50px;
     left: 0;
     width: 40px;
     height: 2px;
-    background: #ddd;
+    background: #E30613;
     transform: translate(-50%, 0);
 }
 
+/* ------------ section 4 - main_event ------------ */
+.main_event {
+    padding: 100px 0;
+    position: relative;
+    background: #fff;
+}
+
+.main_event .title {
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+.main_event .title h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.main_event .title p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.main_event .case {
+    overflow: hidden;
+}
+
+.main_event .event_slide {
+    margin: 0 -15px
+}
+
+.main_event .event_slide figure {
+    padding: 0 15px;
+}
 
 
+.main_event .arrows {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
 
+    transform: translate(-50%, -50%);
+    max-width: 1400px;
+    width: 100%;
 
+    padding: 0 15px;
+}
 
+.main_event .arrows i {
+    padding: 20px 5px;
+    background: #fff;
 
+}
 
+/* 슬라이드 버튼 만들어주기 */
+.main_event .slick-dots {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
 
+.main_event .slick-dots li {
+    display: inline-block;
+}
 
+.main_event .slick-dots button {
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 10px;
+    margin: 0 2px;
+    cursor: pointer;
+}
 
+/* li에 slick-active가 적용되면 바뀌는 색깔 */
+.main_event .slick-dots li.slick-active button {
+    background: #333;
+}
 
 
 

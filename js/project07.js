@@ -46,6 +46,29 @@ $(function () {
     })
 
 
+    //tab menu
+    $('.tab_link li').on('click', function (event) {
+        event.preventDefault();
+        let idx = $(this).index(); //0,1,2
+
+        $(this).addClass('on')
+            .siblings().removeClass('on');
+
+        //방법 1
+        //$('.tab_content .con').removeClass('on');
+        // $('.tab_content .con').eq(idx).addClass('on')
+
+        //방법 2
+        $('.tab_content .con').eq(idx).addClass('on')
+            .siblings().removeClass('on');
+
+
+        console.log(event, event.target, event.currentTarget, $(this), $(this).index());
+
+
+    });
+
+
     //메인 슬라이드 스크롤 아래 버튼
     $('.scr').on('click', function (e) {
         e.preventDefault();
@@ -55,13 +78,13 @@ $(function () {
     });
 
 
-    $('.portfolio_slide').on('init afterChange', function (e, s, c) {
+    $('.travel_slide').on('init afterChange', function (e, s, c) {
         console.log(c);
-        $('.main_portfolio .itm').eq(c).addClass('on')
+        $('.main_travel .itm').eq(c).addClass('on')
             .siblings().removeClass('on')
 
     })
-    $('.portfolio_slide').slick({
+    $('.travel_slide').slick({
         centerMode: true,
         variableWidth: true,
         arrows: false,
@@ -72,13 +95,36 @@ $(function () {
 
 
 
-    $('.main_portfolio .tab_arrows .left').on('click', function () {
-        $('.portfolio_slide').slick('slickPrev')
+    $('.main_travel .tab_arrows .left').on('click', function () {
+        $('.travel_slide').slick('slickPrev')
     });
-    $('.main_portfolio .tab_arrows .right').on('click', function () {
-        $('.portfolio_slide').slick('slickNext')
+    $('.main_travel .tab_arrows .right').on('click', function () {
+        $('.travel_slide').slick('slickNext')
     });
 
+
+    // .main_event에 화살표 버튼 눌러서 슬라이드 돌아가게 하기
+    $('.main_event .arrows .left').on('click', function () {
+        $('.event_slide').slick('slickPrev');
+    });
+    $('.main_event .arrows .right').on('click', function () {
+        $('.event_slide').slick('slickNext');
+    });
+
+
+    $('.event_slide').slick({
+        slidesToShow: 3,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
 
 
     //to_top
