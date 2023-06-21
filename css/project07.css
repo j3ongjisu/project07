@@ -115,7 +115,7 @@
 }
 
 .header.on .gnb .main_menu a:hover {
-    color: #048ABF;
+    color: #E30613;
 }
 
 /* 메뉴 - 로그인 창 */
@@ -416,6 +416,7 @@
 .tab_link {
     /* display: flex;*/
     display: table;
+    table-layout: fixed;
     width: 100%;
     margin: 0 0 10px 0;
 
@@ -463,7 +464,7 @@
     display: flex;
     gap: 20px;
     margin: 0 0 50px 00;
-    justify-content: center
+    justify-content: center;
 }
 
 .tab_content .con .tc_tit a {
@@ -473,6 +474,8 @@
     color: #777;
     border: 1px solid #777;
     border-radius: 15px;
+    transition: 0.3s;
+
 }
 
 .tab_content .con .tc_tit a:hover {
@@ -499,14 +502,7 @@
 
     font-size: 14px;
     font-family: 'Noto Sans KR';
-
-    /* 검색어 너비 늘어나게 하는 효과 */
-    /* transition: width 0.5s; */
 }
-
-/* .tab_content .search input[type="text"]:focus {
-    width: 160px;
-} */
 
 .tab_content .search input[type="text"]::placeholder {
     color: #777;
@@ -524,9 +520,19 @@
     vertical-align: middle;
 }
 
+
+
 .tab_content .search_btn a {
-    padding: 10px 20px;
-    border: 1px solid #333;
+    padding: 6px 20px 5px 20px;
+    color: #777;
+    border: 1px solid #777;
+    transition: 0.3s;
+}
+
+.tab_content .search_btn:hover a {
+    color: #fff;
+    border: 1px solid #E30613;
+    background: #E30613;
 }
 
 /*----------------section 3 - main_travel ----------------*/
@@ -565,7 +571,6 @@
 
 /* 슬라이드 버튼 */
 .main_travel .slick-dots {
-    margin: 40px 0;
     text-align: center;
 }
 
@@ -589,6 +594,7 @@
 .main_travel figure {
     max-width: 1200px;
     padding: 0 15px;
+    margin: 0 0 30px 0;
     transition: 1s;
 }
 
@@ -660,6 +666,11 @@
     transform-origin: left bottom;
 }
 
+.main_travel .tab_arrows .left:hover::before,
+.main_travel .tab_arrows .left:hover::after {
+    background: #E30613;
+}
+
 .main_travel .tab_arrows .right {
     position: absolute;
     right: 15px;
@@ -693,6 +704,10 @@
     transform-origin: right bottom;
 }
 
+.main_travel .tab_arrows .right:hover::before,
+.main_travel .tab_arrows .right:hover::after {
+    background: #E30613;
+}
 
 .main_travel .itm a {
     margin: auto 0 0 0;
@@ -770,10 +785,24 @@
     padding: 0 15px;
 }
 
+.main_event .event_slide figure:hover span {
+    color: #000000;
+}
+
+
+.main_event .event_slide figure .img_box {
+    background: #f9f9f9;
+}
+
+.main_event .event_slide figure .img_box img {
+    border-radius: 10px 10px 0 0;
+}
+
 .main_event .event_slide .event_tit {
     padding: 20px 30px;
     text-align: left;
     background: #f9f9f9;
+    border-radius: 0 0 10px 10px;
 }
 
 .main_event .event_slide .event_tit h3 {
@@ -783,7 +812,19 @@
     border: 1px solid;
     font-size: 13px;
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
+}
+
+.main_event .event_slide .event_tit .red {
+    color: #E30613;
+}
+
+.main_event .event_slide .event_tit .blue {
+    color: rgb(27, 86, 175);
+}
+
+.main_event .event_slide .event_tit .purple {
+    color: rgb(165, 32, 165);
 }
 
 .main_event .event_slide .event_tit span {
@@ -791,17 +832,34 @@
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 25px 0;
+    color: #494949;
 }
 
 .main_event .event_slide .event_tit p {
+    position: relative;
     font-weight: 300;
+}
+
+.main_event .event_slide .event_tit p::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+}
+
+.main_event .event_slide figure:hover .event_tit p::before {
+    width: 178px;
+    height: 1px;
+    background: #666;
 
 }
 
 .main_event .arrows {
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 30%;
     display: flex;
     justify-content: space-between;
 
@@ -812,16 +870,34 @@
     padding: 0 15px;
 }
 
-.main_event .arrows i {
+.main_event .arrows .left {
     padding: 20px 5px;
-    background: #fff;
+    border-radius: 0 10px 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: 0.5s;
+}
 
+.main_event .arrows .left:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+.main_event .arrows .right {
+    padding: 20px 5px;
+    border-radius: 10px 0 0 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transition: 0.5s;
+
+}
+
+.main_event .arrows .right:hover {
+    background: rgba(0, 0, 0, 1);
 }
 
 /* 슬라이드 버튼 만들어주기 */
 .main_event .slick-dots {
     text-align: center;
-    margin: 20px 0 0 0;
 }
 
 .main_event .slick-dots li {
@@ -832,19 +908,94 @@
     border: none;
     outline: none;
     width: 20px;
-    height: 20px;
+    height: 4px;
     background: #ddd;
-    border-radius: 50%;
+    border-radius: 5px;
     color: #fff;
-    font-size: 10px;
-    margin: 0 2px;
+    font-size: 0;
+    margin: 30px 2px 0 2px;
     cursor: pointer;
 }
 
 /* li에 slick-active가 적용되면 바뀌는 색깔 */
 .main_event .slick-dots li.slick-active button {
-    background: #333;
+    background: #E30613;
 }
+
+/* section 04 - main_background */
+.main_background {
+    padding: 100px 0;
+    position: relative;
+    background: url(../images/bg01.jpg) no-repeat left top/cover;
+}
+
+.main_background .bg_box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main_background .bg_box .bg_txt {
+    margin: 0 0 30px 0;
+}
+
+.main_background .bg_box .bg_txt h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.main_background .bg_box .bg_txt p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+
+}
+
+
+.main_background .bg_content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+
+
+.main_background .bg_content .bg_content_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    padding: 0 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+
+.main_background .bg_content .bg_content_box:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.main_background .bg_content .bg_content_box i {
+    font-size: 40px;
+    margin: 0 0 20px 0;
+}
+
+.main_background .bg_content .bg_content_box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.main_background .bg_content .bg_content_box p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
 
 
 
