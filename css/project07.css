@@ -290,7 +290,7 @@
 .main_visual .menu li {
     position: relative;
     width: 40px;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 1);
 }
 
 .main_visual .menu li::before {
@@ -301,6 +301,7 @@
     width: 100%;
     height: 4px;
     background: #ddd;
+    border-radius: 15px;
 }
 
 .main_visual .menu li::after {
@@ -311,6 +312,7 @@
     width: 0;
     height: 4px;
     background: #E30613;
+    border-radius: 15px;
 }
 
 .main_visual .menu li.on::after {
@@ -396,6 +398,7 @@
 
 .main_tab {
     padding: 100px 0;
+
 }
 
 .main_tab .tab_tit {
@@ -527,6 +530,7 @@
     padding: 6px 20px 5px 20px;
     color: #777;
     border: 1px solid #777;
+    border-radius: 3px;
     transition: 0.3s;
 }
 
@@ -537,6 +541,7 @@
 }
 
 /*----------------section 3 - main_travel ----------------*/
+
 .main_travel {
     padding: 100px 0;
     position: relative;
@@ -1096,7 +1101,7 @@
 /* 사진 위 설명 */
 .main_travel .travle_txt {
     position: absolute;
-    top: 175px;
+    top: -3%;
     left: 49%;
 
     /* display: flex; */
@@ -1298,7 +1303,52 @@
     background: #E30613;
 }
 
-/* section 04 - main_background */
+/* ------------------ section 4 - main_notice --------------------*/
+.main_notice {
+    padding: 100px 0;
+    background: #f9f9f9;
+}
+
+.main_notice .notice_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_notice .notice_wrap .noice_left {}
+
+.main_notice .notice_wrap .noice_left h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #444;
+    margin: 0 0 20px 0;
+}
+
+.main_notice .notice_wrap p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444;
+    margin: 0 0 25px 0;
+}
+
+.main_notice .notice_wrap a {
+    font-size: 15px;
+    padding: 6px 15px 4px 15px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    color: #444;
+}
+
+.main_notice .notice_wrap a:hover {
+    color: #fff;
+    background: #E30613;
+    border: 1px solid #E30613;
+}
+
+
+
+
+
+/* section 05 - main_background */
 .main_background {
     padding: 100px 0;
     position: relative;
@@ -1372,8 +1422,104 @@
     font-weight: 300;
 }
 
+/* ----------- footer ----------- */
+.footer {
+    padding: 50px;
+    background: #f9f9f9;
+    color: #444;
+}
 
+.footer .top {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
 
+.footer .top strong {
+    font-weight: 800;
+    color: #E30613;
+}
+
+.footer .top .left {
+    display: flex;
+    gap: 31px;
+    line-height: 28px;
+    align-items: center;
+}
+
+.footer .top .left li {
+    position: relative;
+}
+
+.footer .top .left li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translate(0, -50%);
+    width: 1px;
+    height: 12px;
+    background: #666;
+}
+
+.footer .top .left a {
+    display: block;
+    font-size: 15px;
+}
+
+.footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.footer .author ul {
+    margin: 0 0 10px 0;
+    line-height: 20px;
+}
+
+.footer .author ul span {
+    font-size: 0;
+    padding: 0 8px;
+}
+
+.footer .author ul span::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: #666;
+}
+
+.footer .bottom span {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.footer .sns {
+    display: flex;
+    gap: 8px;
+}
+
+.footer .sns i {
+    padding: 8px;
+    color: #ddd;
+    background: #666;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.footer .sns .xi-facebook:hover {
+    background: #3b5998;
+}
+
+.footer .sns .xi-instagram:hover {
+    background: radial-gradient(circle farthest-corner at 32% 106%, #ffe17d 0%, #ffcd69 10%, #fa9137 28%, #eb4141 42%, transparent 82%), linear-gradient(135deg, #234bd7 12%, #c33cbe 58%);
+}
+
+.footer .sns .xi-youtube-play:hover {
+    background: #c4302b;
+}
 
 
 
@@ -1385,7 +1531,7 @@
 .to_top {
     position: fixed;
     bottom: 0px;
-    right: 100px;
+    right: 145px;
     z-index: 999;
     opacity: 0;
     visibility: hidden;
