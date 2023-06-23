@@ -99,7 +99,7 @@
 .gnb .main_menu a {
     display: block;
     color: #444;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     color: #444;
     line-height: 120px;
@@ -156,8 +156,19 @@
     margin: 0 0 0 -600px;
 }
 
+
+
+
 .main_visual .itm01 {
-    background-image: url(../images/slide01.jpeg);
+    background-image: url(../images/slide001.jpeg);
+}
+
+.main_visual .itm01::before {
+    content: "";
+    position: absolute;
+    width: 750px;
+    height: 640px;
+    background: linear-gradient(45deg, rgba(173, 59, 173, 0.7), rgba(1, 1, 168, 0.7));
 }
 
 .main_visual .itm02 {
@@ -168,12 +179,36 @@
     background-image: url(../images/slide03.jpeg);
 }
 
+.main_visual .itm03::before {
+    content: "";
+    position: absolute;
+    width: 780px;
+    height: 640px;
+    background: rgba(0, 0, 0, 0.4)
+}
+
 .main_visual .itm04 {
     background-image: url(../images/slide04.jpeg);
 }
 
+.main_visual .itm04::before {
+    content: "";
+    position: absolute;
+    width: 780px;
+    height: 640px;
+    background: rgba(0, 0, 0, 0.4)
+}
+
 .main_visual .itm05 {
     background-image: url(../images/slide05.jpeg);
+}
+
+.main_visual .itm05::before {
+    content: "";
+    position: absolute;
+    width: 780px;
+    height: 640px;
+    background: rgba(0, 153, 255, 0.4)
 }
 
 .main_visual .itm06 {
@@ -235,7 +270,7 @@
 }
 
 .main_visual .itm01 strong span {
-    color: #00ca0a;
+    color: #F5DC45;
 }
 
 .main_visual .itm01 strong .main_visual .itm01 p {
@@ -254,7 +289,6 @@
 
 .main_visual .itm02 p {
     font-size: 16px;
-    font-weight: 300;
     color: #333;
 }
 
@@ -346,11 +380,11 @@
 .main_visual .slide_num {
     position: absolute;
     left: 50%;
-    bottom: 6%;
+    bottom: 37px;
     z-index: 999;
     font-size: 20px;
     font-weight: 500;
-    transform: translate(-27%, 0);
+    transform: translate(-26%, 0);
     margin: 0 0 0 -16px;
     padding: 0 15px;
 
@@ -363,7 +397,7 @@
     left: 50%;
     bottom: -3px;
 
-    background: #c7c6c6;
+    background: #888;
     border-radius: 30px;
 
     transform: translate(-50%, -50%);
@@ -398,7 +432,6 @@
 
 .main_tab {
     padding: 100px 0;
-
 }
 
 .main_tab .tab_tit {
@@ -417,31 +450,37 @@
     text-align: center;
 }
 
-.tab_link {
+.main_tab .tab .tab_menu {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(145, 145, 145, 0.1);
+}
+
+.main_tab .tab .tab_menu .tab_link {
     /* display: flex;*/
     display: table;
     table-layout: fixed;
     width: 100%;
     margin: 0 0 10px 0;
-
 }
 
-.tab_link>* {
+.main_tab .tab .tab_menu .tab_link>* {
     /* flex: 1;*/
     display: table-cell;
     background: #999;
     color: #fff;
 }
 
-.tab_link>*~* {
-    border-left: 1px solid #ddd;
+.main_tab .tab .tab_menu .tab_link>*~* {
+    border-left: 2px solid #ddd;
 }
 
-.tab_link>*.on {
+.main_tab .tab .tab_menu .tab_link>*.on {
     background: rgba(227, 6, 19, 0.9);
 }
 
-.tab_link a {
+.main_tab .tab .tab_menu .tab_link a {
+    font-size: 17px;
     display: block;
     padding: 10px 20px;
 }
@@ -465,10 +504,19 @@
 }
 
 .tab_content .con .tc_tit {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
     display: flex;
     gap: 20px;
     margin: 0 0 50px 00;
     justify-content: center;
+}
+
+.tab_content .con .tc_tit p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
 }
 
 .tab_content .con .tc_tit a {
@@ -504,12 +552,13 @@
     border-bottom: 1px solid #888;
     text-align: center;
 
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
     font-family: 'Noto Sans KR';
 }
 
 .tab_content .search input[type="text"]::placeholder {
-    color: #777;
+    color: #999;
 }
 
 .tab_content .search input[type="text"]:focus::placeholder {
@@ -618,8 +667,8 @@
 
 .main_travel .itm h3 {
     font-size: 18px;
-    font-weight: 500;
-    color: #555;
+    font-weight: 700;
+    color: #444;
     margin: 0 0 20px 0;
     text-align: center;
 }
@@ -627,11 +676,18 @@
 /*---------------------------- cts_graph_wrap ------------------------------- */
 
 /* ICN 서울 / 인천  CTS 삿포로 */
+.main_travel .travle_txt .cts_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .cts_graph_wrap .graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -671,11 +727,18 @@
 }
 
 /* ICN 서울 / 인천  PEK 베이징[北京] */
+.main_travel .travle_txt .pek_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .pek_graph_wrap .pek_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -716,11 +779,18 @@
 }
 
 /* ICN 서울 / 인천 LAX 로스앤젤레스 */
+.main_travel .travle_txt .lax_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .lax_graph_wrap .lax_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -762,11 +832,18 @@
 
 
 /* FRA 프랑크푸르트 */
+.main_travel .travle_txt .fra_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .fra_graph_wrap .fra_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -807,11 +884,18 @@
 }
 
 /* HNL 호놀룰루 */
+.main_travel .travle_txt .hnl_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .hnl_graph_wrap .hnl_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -852,11 +936,18 @@
 }
 
 /*  del 델리 */
+.main_travel .travle_txt .del_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .del_graph_wrap .del_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -896,11 +987,18 @@
 }
 
 /*  SPN 사이판 */
+.main_travel .travle_txt .spn_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .spn_graph_wrap .spn_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -940,11 +1038,18 @@
 }
 
 /* FCO 로마 / 다빈치 */
+.main_travel .travle_txt .fco_graph_wrap p {
+    font-size: 13px;
+    font-weight: 300;
+    margin: 0 0 5px 0;
+}
+
 .main_travel .travle_txt .fco_graph_wrap .fco_graph_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: end;
     text-align: center;
+    margin: 0 0 10px 0;
     gap: 5px;
 
     height: 250px;
@@ -1000,10 +1105,11 @@
 
 .main_travel .tab_arrows {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 80%;
+    /* left: 500px; */
+    left: 26.3%;
     transform: translate(-50%, -50%);
-    max-width: 1300px;
+    max-width: 90px;
     width: 100%;
     user-select: none;
     cursor: pointer;
@@ -1014,7 +1120,7 @@
 .main_travel .tab_arrows .left {
     position: absolute;
     left: 15px;
-    width: 80px;
+    width: 40px;
     height: 30px;
     text-align: right;
     text-transform: uppercase;
@@ -1026,9 +1132,12 @@
     position: absolute;
     top: 60%;
     left: 0;
-    right: 0;
+    width: 8px;
     height: 2px;
-    background: #333;
+    background: #555;
+
+    transform: rotate(45deg);
+    transform-origin: left bottom;
 }
 
 .main_travel .tab_arrows .left::after {
@@ -1036,9 +1145,9 @@
     position: absolute;
     top: 60%;
     left: 0;
-    width: 20px;
+    width: 10px;
     height: 2px;
-    background: #333;
+    background: #555;
 
     transform: rotate(-45deg);
     transform-origin: left bottom;
@@ -1052,7 +1161,7 @@
 .main_travel .tab_arrows .right {
     position: absolute;
     right: 15px;
-    width: 80px;
+    width: 40px;
     height: 30px;
     text-align: left;
     text-transform: uppercase;
@@ -1063,10 +1172,13 @@
     content: "";
     position: absolute;
     top: 60%;
-    left: 0;
     right: 0;
+    width: 8px;
     height: 2px;
-    background: #333;
+    background: #555;
+
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
 }
 
 .main_travel .tab_arrows .right::after {
@@ -1074,9 +1186,9 @@
     position: absolute;
     top: 60%;
     right: 0;
-    width: 20px;
+    width: 10px;
     height: 2px;
-    background: #333;
+    background: #555;
 
     transform: rotate(45deg);
     transform-origin: right bottom;
@@ -1090,6 +1202,7 @@
 .main_travel .itm a {
     margin: auto 0 0 0;
     align-self: flex-end;
+    transition: 0.3s;
 }
 
 .main_travel .itm.on {
@@ -1113,7 +1226,7 @@
 
     width: 360px;
     height: 420px;
-    padding: 40px 15px;
+    padding: 40px 35px;
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1182,12 +1295,11 @@
     text-align: left;
     background: #f9f9f9;
     border-radius: 0 0 10px 10px;
-    cursor: pointer;
 }
 
 .main_event .event_slide .event_tit h3 {
     display: inline-block;
-    padding: 5px 20px;
+    padding: 6px 20px 4px 20px;
     color: #555;
     border: 1px solid;
     font-size: 13px;
@@ -1304,6 +1416,10 @@
 }
 
 /* ------------------ section 4 - main_notice --------------------*/
+/* * {
+    outline: 1px solid;
+} */
+
 .main_notice {
     padding: 100px 0;
     background: #f9f9f9;
@@ -1327,25 +1443,74 @@
     font-size: 18px;
     font-weight: 400;
     color: #444;
-    margin: 0 0 25px 0;
+    margin: 0 0 50px 0;
 }
 
-.main_notice .notice_wrap a {
+.main_notice .notice_wrap .noice_left a {
+    display: inline-block;
     font-size: 15px;
     padding: 6px 15px 4px 15px;
     border: 1px solid #444;
     border-radius: 3px;
     color: #444;
+    transition: 0.3s;
 }
 
-.main_notice .notice_wrap a:hover {
+.main_notice .notice_wrap .noice_left a:hover {
     color: #fff;
     background: #E30613;
     border: 1px solid #E30613;
 }
 
+.main_notice .notice_wrap .noice_right {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt {
+    width: 600px;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt .notice_txt_box {
+    display: flex;
+    padding: 7px 0;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
+
+.main_notice .notice_wrap .noice_right .notice_txt .notice_txt_box h3 {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 7px 4px 7px;
+    color: #E30613;
+    border: 1px solid #E30613;
+
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt .txt01 strong {
+    margin: 0 330px 0 0;
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt strong {
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt strong:hover {
+    color: #000;
+
+}
+
+.main_notice .notice_wrap .noice_right .notice_txt span {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+}
 
 
 /* section 05 - main_background */
@@ -1404,7 +1569,9 @@
 
 .main_background .bg_content .bg_content_box:hover {
     background: rgba(255, 255, 255, 0.9);
+    transition: 0.3s;
 }
+
 
 .main_background .bg_content .bg_content_box i {
     font-size: 40px;
@@ -1459,7 +1626,7 @@
     transform: translate(0, -50%);
     width: 1px;
     height: 12px;
-    background: #666;
+    background: #ccc;
 }
 
 .footer .top .left a {
@@ -1473,27 +1640,35 @@
     font-size: 15px;
 }
 
-.footer .author ul {
+.footer .bottom .author ul {
+    font-size: 15px;
     margin: 0 0 10px 0;
     line-height: 20px;
 }
 
-.footer .author ul span {
+.footer .bottom .author ul span {
     font-size: 0;
     padding: 0 8px;
 }
 
-.footer .author ul span::before {
+.footer .bottom .author ul span::before {
     content: "";
     display: inline-block;
     width: 1px;
     height: 12px;
-    background: #666;
+    background: #ccc;
+}
+
+.footer .bottom .copy {
+    color: #444;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .footer .bottom span {
+    color: #444;
     font-size: 13px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .footer .sns {
